@@ -2,12 +2,16 @@ package com.example.jikbangcopy_220227
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.jikbangcopy_220227.adapters.RoomAdapter
 import com.example.jikbangcopy_220227.datas.RoomData
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     val mRoomList = ArrayList<RoomData>()
 
+    lateinit var mRoomAdapter : RoomAdapter
+    // 당장 초기화 작업을 하면 화면이 완성 되기도 전에 하므로 멤버 변수로 하기 위해선 나중에 초기화 작업을 한다고 알림
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,5 +27,8 @@ class MainActivity : AppCompatActivity() {
         mRoomList.add( RoomData( 6800, "서울시 영등포구", 5, "8번째 방입니다."))
         mRoomList.add( RoomData( 38000, "서울시 강동구", 2, "9번째 방입니다."))
         mRoomList.add( RoomData( 8600, "서울시 마포구", 1, "10번째 방입니다."))
+
+        mRoomAdapter = RoomAdapter(this, R.layout.room_list_item , mRoomList)
+        roomListView.adapter = mRoomAdapter
     }
 }
