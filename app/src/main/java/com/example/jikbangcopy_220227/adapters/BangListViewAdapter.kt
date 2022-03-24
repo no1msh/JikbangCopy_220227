@@ -21,7 +21,7 @@ class BangListViewAdapter(
 
         if (tempRow == null)
         {
-            LayoutInflater.from(mContext).inflate(R.layout.bang_list_item, null)
+            tempRow = LayoutInflater.from(mContext).inflate(R.layout.bang_list_item, null)
         }
 
         val row = tempRow!!

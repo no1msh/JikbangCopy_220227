@@ -8,4 +8,5 @@ class BangData(
     val description : String,
 
 ) {
+
 }
