@@ -32,7 +32,7 @@ class BangListViewAdapter(
         val txtAddress = row.findViewById<TextView>(R.id.txtAddressFloor)
         val txtDescription = row.findViewById<TextView>(R.id.txtDescription)
 
-        txtPrice.text = data.price.toString()
+        txtPrice.text = data.getFormattedPrice(data.price)
         txtAddress.text = "${data.address}, ${data.floor}층"
         txtDescription.text = data.description
 
